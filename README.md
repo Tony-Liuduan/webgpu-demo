@@ -6,6 +6,10 @@
 
 ## WebGL 问题
 
+WebGL 的目的是支持浏览器上的原生 3D 功能。他的目标是 OpenGL
+
+请注意，WebGL 不一定在 OpenGL 上运行，它实际上因平台而异。在 Linux / MacOS 上它在 OpenGL 上运行，在 Windows 上它在DirectX上运行。在 Edge 上，WebGL 内容将被转换为 DirectX 等效项以显示它；
+
 使用WebGL，CPU成为巨大的瓶颈，每一帧需要花费81ms，而使用WebGPU，CPU一帧只需要花费0.18ms，减少CPU耗时意味能给GPU留出更多的运行时间，这是WebGPU强大的一点
 
 每一次调用 <http://gl.xxx> 时，都会完成 CPU 到 GPU 的信号传递，改变 GPU 的状态，是立即生效的。熟悉计算机基础的朋友应该知道，计算机内部的时间和硬件之间的距离有多么重要，世人花了几十年时间无不为信号传递付出了努力，上述任意一条 gl 函数改变 GPU 状态的过程，大致要走完 CPU ~ 总线 ~ GPU 这么长一段距离。
