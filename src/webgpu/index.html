@@ -11,15 +11,22 @@
             content="width=device-width, initial-scale=1.0"
         >
         <title>webgpu</title>
+        <style>
+            canvas {
+                max-width: 100vw;
+                max-height: 100vh;
+                outline: 1px solid #000
+            }
+        </style>
     </head>
     <body>
         <canvas
             id="canvas"
-            width="300"
-            height="300"
+            width="500"
+            height="500"
         ></canvas>
         <script
-            src="./index.js"
+            src="./compute.js"
             type="module"
         ></script>
     </body>
